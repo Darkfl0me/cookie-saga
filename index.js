@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-const whitelist = ['http://local.shyamlaldigitalwale.com']
+const whitelist = ['http://local.shyamlaldigitalwale.com:3000']
 
 const corsOptions = {
   credentials: true,
