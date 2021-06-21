@@ -9,6 +9,10 @@
     "pm2": "^5.1.0"
   },
   "scripts": {
-    "start": "pm2 start index.js"
+    "start": "pm2 start index.js",
+    "monit": "pm2 monit",
+    "restart": "pm2 restart index.js",
+    "logs": "pm2 logs",
+    "stop": "pm2 stop index.js"
   }
 }
