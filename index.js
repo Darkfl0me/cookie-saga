@@ -8,6 +8,7 @@ const whitelist = ['http://local.shyamlaldigitalwale.com:3000']
 const corsOptions = {
   credentials: true,
   origin: (origin, callback) => {
+    console.log(origin, 'origin');
     if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true);
     } else {
@@ -17,7 +18,7 @@ const corsOptions = {
   optionSuccessStatus: 200
 }
 
-cors(corsOptions);
+app.use(cors(corsOptions));
 
 app.options("*", cors());
 app.get("/cookie", (req, res) => {
@@ -25,7 +26,7 @@ app.get("/cookie", (req, res) => {
     maxAge: 24 * 60 * 60,
     httpOnly: true,
     domain: '.shyamlaldigitalwale.com',
-    secure: true,
+    secure: false,
   })
   res.json({
     msg: "success"
